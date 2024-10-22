@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_MainFile Include="/Users/michaelportela/Desktop/proyecto 1 ds4/proyecto_1_ds4-1/calculadora/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/linker-cache/main.arm64.mm">
+      <Arch>arm64</Arch>
+      <Arguments>-DDEBUG</Arguments>
+    </_MainFile>
+  </ItemGroup>
+</Project>
