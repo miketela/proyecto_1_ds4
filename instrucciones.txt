@@ -1,3 +1,12 @@
 primero creamos el .NET
 
 1. dotnet new maui -n calculadora
+
+2.  dotnet build -f net8.0-maccatalyst
+    dotnet run -f net8.0-maccatalyst
+
+3. agregamos extensiones que nos permita conectar 
+    dotnet add package Microsoft.EntityFrameworkCore
+    dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+    dotnet add package Microsoft.EntityFrameworkCore.Tools
+

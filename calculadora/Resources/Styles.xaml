@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!-- Colores -->
+    <Color x:Key="BackgroundColor">{AppThemeBinding Light=#F2F2F7, Dark=#000000}</Color>
+    <Color x:Key="EntryBackgroundColor">{AppThemeBinding Light=#FFFFFF, Dark=#1C1C1E}</Color>
+    <Color x:Key="EntryTextColor">{AppThemeBinding Light=#000000, Dark=#FFFFFF}</Color>
+    <Color x:Key="NumberButtonBackgroundColor">{AppThemeBinding Light=#FFFFFF, Dark=#505050}</Color>
+    <Color x:Key="NumberButtonTextColor">{AppThemeBinding Light=#000000, Dark=#FFFFFF}</Color>
+    <Color x:Key="OperatorButtonBackgroundColor">{AppThemeBinding Light=#FF9500, Dark=#FF9500}</Color>
+    <Color x:Key="OperatorButtonTextColor">{AppThemeBinding Light=#FFFFFF, Dark=#FFFFFF}</Color>
+    <Color x:Key="FunctionButtonBackgroundColor">{AppThemeBinding Light=#D1D1D6, Dark=#505050}</Color>
+    <Color x:Key="FunctionButtonTextColor">{AppThemeBinding Light=#000000, Dark=#FFFFFF}</Color>
+    <Color x:Key="EqualButtonBackgroundColor">{AppThemeBinding Light=#FF9500, Dark=#FF9500}</Color>
+    <Color x:Key="EqualButtonTextColor">{AppThemeBinding Light=#FFFFFF, Dark=#FFFFFF}</Color>
+
+    <!-- Estilos de botones -->
+    <Style x:Key="BaseButtonStyle" TargetType="Button">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="60" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style x:Key="NumberButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="BackgroundColor" Value="{StaticResource NumberButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{StaticResource NumberButtonTextColor}" />
+    </Style>
+
+    <Style x:Key="OperatorButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="BackgroundColor" Value="{StaticResource OperatorButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{StaticResource OperatorButtonTextColor}" />
+    </Style>
+
+    <Style x:Key="FunctionButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="BackgroundColor" Value="{StaticResource FunctionButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{StaticResource FunctionButtonTextColor}" />
+    </Style>
+
+    <Style x:Key="EqualButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="BackgroundColor" Value="{StaticResource EqualButtonBackgroundColor}" />
+        <Setter Property="TextColor" Value="{StaticResource EqualButtonTextColor}" />
+    </Style>
+</ResourceDictionary>

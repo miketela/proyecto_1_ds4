@@ -1,36 +1,75 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿using calculadora.Data;
+using calculadora.Models;
+
+
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="calculadora.MainPage">
+             x:Class="calculadora.MainPage"
+             BackgroundColor="{DynamicResource BackgroundColor}"
+             Title="Calculadora">
+    <StackLayout Padding="20" Spacing="10">
+        <!-- Display -->
+        <Entry x:Name="txtDisplay"
+               FontSize="36"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Center"
+               Text="0"
+               IsReadOnly="True"
+               BackgroundColor="{DynamicResource EntryBackgroundColor}"
+               TextColor="{DynamicResource EntryTextColor}"
+               Margin="0,0,0,20" />
+        <!-- Buttons Grid -->
+        <Grid RowSpacing="10" ColumnSpacing="10">
+            <!-- Rows and Columns Definitions -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+            <!-- Row 0 -->
+            <Button Text="C" Grid.Row="0" Grid.Column="0" Style="{StaticResource FunctionButtonStyle}" Clicked="OnClearClicked" />
+            <Button Text="±" Grid.Row="0" Grid.Column="1" Style="{StaticResource FunctionButtonStyle}" Clicked="OnNegateClicked" />
+            <Button Text="%" Grid.Row="0" Grid.Column="2" Style="{StaticResource FunctionButtonStyle}" Clicked="OnPercentageClicked" />
+            <Button Text="÷" Grid.Row="0" Grid.Column="3" Style="{StaticResource OperatorButtonStyle}" Clicked="OnOperatorClicked" />
 
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+            <!-- Row 1 -->
+            <Button Text="7" Grid.Row="1" Grid.Column="0" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="8" Grid.Row="1" Grid.Column="1" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="9" Grid.Row="1" Grid.Column="2" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="×" Grid.Row="1" Grid.Column="3" Style="{StaticResource OperatorButtonStyle}" Clicked="OnOperatorClicked" />
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+            <!-- Row 2 -->
+            <Button Text="4" Grid.Row="2" Grid.Column="0" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="6" Grid.Row="2" Grid.Column="2" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="−" Grid.Row="2" Grid.Column="3" Style="{StaticResource OperatorButtonStyle}" Clicked="OnOperatorClicked" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
-    </ScrollView>
+            <!-- Row 3 -->
+            <Button Text="1" Grid.Row="3" Grid.Column="0" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="2" Grid.Row="3" Grid.Column="1" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="3" Grid.Row="3" Grid.Column="2" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="+" Grid.Row="3" Grid.Column="3" Style="{StaticResource OperatorButtonStyle}" Clicked="OnOperatorClicked" />
 
+            <!-- Row 4 -->
+            <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource NumberButtonStyle}" Clicked="OnNumberClicked" />
+            <Button Text="." Grid.Row="4" Grid.Column="2" Style="{StaticResource NumberButtonStyle}" Clicked="OnDecimalClicked" />
+            <Button Text="=" Grid.Row="4" Grid.Column="3" Style="{StaticResource EqualButtonStyle}" Clicked="OnEqualClicked" />
+        </Grid>
+
+        <!-- History Button -->
+        <Button Text="Historial" 
+                Style="{StaticResource FunctionButtonStyle}" 
+                Clicked="OnMostrarCalculosClicked" 
+                Margin="0,20,0,0" />
+    </StackLayout>
 </ContentPage>
